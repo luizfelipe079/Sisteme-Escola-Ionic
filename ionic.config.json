@@ -1,0 +1,7 @@
+{
+  "name": "SistemaEscolaIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
