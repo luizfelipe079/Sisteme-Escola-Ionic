@@ -1,25 +1,31 @@
 <ion-content>
   <div class="flex-center">
-    <ion-card>
-      <img src="../../../assets/icon/esola-login.jpg" alt="pagInicial">
-      <ion-card-header>
-        <ion-card-title color="primary">Login</ion-card-title>
-        <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Senha</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-        <ion-button color="dark" fill="clear" size="full">Esqueci a Senha</ion-button>
-        <ion-button color="light" size="full" (click)="login()">Entrar</ion-button>
-      </ion-card-header>
-      
-      <ion-card-content class="voltar">
-        <ion-button color="light" (click)="voltar()">Voltar</ion-button>
-      </ion-card-content>
-      
-    </ion-card>
+    <form [formGroup]="form">
+      <ion-card>
+        <img src="../../../assets/icon/esola-login.jpg" alt="pagInicial">
+        <ion-card-header>
+          <ion-card-title color="primary">Login</ion-card-title>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.required">Email obrigatório</ion-label>
+          <ion-label color="danger" *ngIf="form.get('email').touched && form.get('email').errors?.email">Email inválido</ion-label>
+
+          <ion-item>
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="password" formControlName="senha"></ion-input>
+          </ion-item>
+          <ion-label color="danger" *ngIf="form.get('senha').touched && form.get('senha').errors?.required">Senha obrigatório</ion-label>
+          <ion-button color="dark" fill="clear" size="full">Esqueci a Senha</ion-button>
+          <ion-button color="light" size="full" [disabled]="!form.valid" (click)="login()">Entrar</ion-button>
+        </ion-card-header>
+        
+        <ion-card-content class="voltar">
+          <ion-button color="light" (click)="voltar()">Voltar</ion-button>
+        </ion-card-content>
+        
+      </ion-card>
+  </form>
   </div>
 </ion-content>
