@@ -3,24 +3,23 @@ import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
-import { LoginPage } from './login.page';
+import { LoginAlunoPage } from './login-aluno.page';
 
-describe('LoginPage', () => {
-  let component: LoginPage;
-  let fixture: ComponentFixture<LoginPage>;
+describe('LoginAlunoPage', () => {
+  let component: LoginAlunoPage;
+  let fixture: ComponentFixture<LoginAlunoPage>;
   let router: Router;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginPage ],
+      declarations: [ LoginAlunoPage ],
       imports: [
         IonicModule.forRoot(),
         AppRoutingModule
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(LoginPage);
-
+    fixture = TestBed.createComponent(LoginAlunoPage);
     router = TestBed.get(Router);
 
     component = fixture.componentInstance;
@@ -32,15 +31,7 @@ describe('LoginPage', () => {
 
     component.login();
 
-    expect(router.navigate).toHaveBeenCalledOnceWith(['home-professor']);
-  });
-
-  it('should go to home on cadastro', () => {
-    spyOn(router, 'navigate');
-
-    component.cadastro();
-
-    expect(router.navigate).toHaveBeenCalledOnceWith(['cadastro']);
+    expect(router.navigate).toHaveBeenCalledOnceWith(['home-aluno']);
   });
 
   it('should return to home on login', () => {

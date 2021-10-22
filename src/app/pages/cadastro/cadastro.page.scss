@@ -1,5 +1,7 @@
 ion-button {
     text-transform: initial;
+
+    padding: 10px;
 }
 
 img {
@@ -12,4 +14,16 @@ img {
 
 ion-title{
     --color : white;
+}
+
+ion-card{
+    height: 400px;
+    width: 500px;
+}
+
+.voltar{
+    display: flex;
+    justify-content: right;
+
+    padding-top: 20px;
 }

@@ -1,0 +1,25 @@
+ion-card {
+    width: 700px;
+    height: 500px;
+}
+
+ion-button {
+    text-transform: initial;
+    padding: 5px;
+    align-items: center;
+}
+
+ion-card-content{
+    padding-top: 140px;
+}
+
+ion-card-title{
+    display: flex;
+    justify-content: center;   
+}
+
+.logout{
+    display: flex;
+    justify-content: right;
+
+}

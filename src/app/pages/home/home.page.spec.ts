@@ -3,51 +3,42 @@ import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
-import { LoginPage } from './login.page';
+import { HomePage } from './home.page';
 
-describe('LoginPage', () => {
-  let component: LoginPage;
-  let fixture: ComponentFixture<LoginPage>;
+describe('HomePage', () => {
+  let component: HomePage;
+  let fixture: ComponentFixture<HomePage>;
   let router: Router;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginPage ],
+      declarations: [ HomePage ],
       imports: [
         IonicModule.forRoot(),
         AppRoutingModule
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(LoginPage);
-
+    fixture = TestBed.createComponent(HomePage);
     router = TestBed.get(Router);
 
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
 
-  it('should go to home on login', () => {
+  it('should go to home on login like Professor', () => {
     spyOn(router, 'navigate');
 
-    component.login();
+    component.loginProfessor();
 
     expect(router.navigate).toHaveBeenCalledOnceWith(['home-professor']);
   });
 
-  it('should go to home on cadastro', () => {
+  it('should go to home on login like Aluno', () => {
     spyOn(router, 'navigate');
 
-    component.cadastro();
+    component.loginAluno();
 
-    expect(router.navigate).toHaveBeenCalledOnceWith(['cadastro']);
-  });
-
-  it('should return to home on login', () => {
-    spyOn(router, 'navigate');
-
-    component.voltar();
-
-    expect(router.navigate).toHaveBeenCalledOnceWith(['home']);
+    expect(router.navigate).toHaveBeenCalledOnceWith(['login-aluno']);
   });
 });
