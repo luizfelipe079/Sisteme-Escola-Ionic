@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CredenciaisDTO } from 'src/models/credenciais.dto';
+import { AuthService } from 'src/services/auth.service';
 import { LoginPageForm } from './login.page.forms';
 
 @Component({
@@ -11,15 +13,28 @@ import { LoginPageForm } from './login.page.forms';
 export class LoginPage implements OnInit {
 
   form: FormGroup;
+  creds: CredenciaisDTO = {
+    email: "",
+    senha: ""
+  };
 
-  constructor(private router: Router, private formBuilder: FormBuilder) { }
+  constructor(
+    private router: Router, 
+    private formBuilder: FormBuilder,
+    private auth: AuthService
+    ) { }
 
   ngOnInit() { 
     this.form = new LoginPageForm(this.formBuilder).createForm();
   }
 
   login(){
-    this.router.navigate(['home-professor']);
+    this.auth.authenticate(this.creds)
+      .subscribe( response => {
+        console.log(response.headers.get('Authorization'));
+        this.router.navigate(['home-professor']);
+      },
+      error => {});
   }
 
   cadastro() {
