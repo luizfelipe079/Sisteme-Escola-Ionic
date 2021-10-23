@@ -31,8 +31,6 @@ export class LoginPage implements OnInit {
   login(){
     this.auth.authenticate(this.creds)
       .subscribe( response => {
-        console.log(response.headers.get('Authentication'));
-        console.log(response);
         this.auth.successfulLogin(response.headers.get('Authorization'));
         this.router.navigate(['home-professor']);
       },
