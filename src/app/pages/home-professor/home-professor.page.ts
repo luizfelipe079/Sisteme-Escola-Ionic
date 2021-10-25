@@ -50,4 +50,8 @@ export class HomeProfessorPage implements OnInit {
   cadastroAluno(){
     this.router.navigate(['cadastro-aluno']);
   }
+
+  cadastroDisciplina(){
+    this.router.navigate(['cadastro-disciplina']);
+  }
 }

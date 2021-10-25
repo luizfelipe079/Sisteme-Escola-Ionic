@@ -1,0 +1,26 @@
+ion-button {
+    text-transform: initial;
+
+    padding: 10px;
+}
+
+ion-title{
+    --color : white;
+}
+
+ion-card{
+    height: 550px;
+    width: 400px;
+}
+
+.formulario{
+
+    padding-top: 50px;
+}
+
+.voltar{
+    display: flex;
+    justify-content: right;
+
+    padding-top: 250px;
+}

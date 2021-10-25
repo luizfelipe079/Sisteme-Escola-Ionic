@@ -46,6 +46,10 @@ const routes: Routes = [
   {
     path: 'esqueci-senha',
     loadChildren: () => import('./pages/esqueci-senha/esqueci-senha.module').then( m => m.EsqueciSenhaPageModule)
+  },
+  {
+    path: 'cadastro-disciplina',
+    loadChildren: () => import('./pages/cadastro-disciplina/cadastro-disciplina.module').then( m => m.CadastroDisciplinaPageModule)
   }
 ];
 

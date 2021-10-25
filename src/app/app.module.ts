@@ -13,6 +13,7 @@ import { ProfessorService } from 'src/services/professor.service';
 import { AlunoService } from 'src/services/aluno.service';
 import { AuthInterceptorProvider } from './interceptors/auth-interceptor';
 import { ErrorInterceptorProvider } from './interceptors/error-intercept';
+import { DisciplinaService } from 'src/services/disciplina.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +27,8 @@ import { ErrorInterceptorProvider } from './interceptors/error-intercept';
     AuthService, 
     StorageService, 
     ProfessorService,
-    AlunoService],
+    AlunoService,
+    DisciplinaService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
