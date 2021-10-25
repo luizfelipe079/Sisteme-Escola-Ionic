@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProfessorDTO } from 'src/models/professor.dto';
 import { ProfessorService } from 'src/services/professor.service';
 import { StorageService } from 'src/services/storage.service';
@@ -14,7 +15,8 @@ export class HomeProfessorPage implements OnInit {
 
   constructor(
     public professorService: ProfessorService,
-    public storage: StorageService
+    public storage: StorageService,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -26,8 +28,19 @@ export class HomeProfessorPage implements OnInit {
         .subscribe(response => {
           this.professor = response;
         },
-        error => {});
+        error => {
+          if(error.status == 403) {
+            this.router.navigate(['login']);
+          }
+        });
+    } else {
+      this.router.navigate(['login']);
     }
+  }
+
+  logout(){
+    this.storage.setLocalUser(null);
+    this.router.navigate(['home']);
   }
 
 }

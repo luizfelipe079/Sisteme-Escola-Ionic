@@ -1,0 +1,27 @@
+<ion-content>
+  <div class="flex-center">
+      <form [formGroup]="form">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title color="primary">Recuperar a senha</ion-card-title>
+          <p>Sua senha será enviada para o email cadastrado</p>
+        </ion-card-header>
+
+        <ion-card-content class="email">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" [(ngModel)]="creds.email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-button color="light" size="full" [disabled]="!form.valid" (click)="recuperarSenha()">Recuperar sua Senha</ion-button>
+          </ion-item>
+        </ion-card-content>
+
+        <ion-card-content class="voltar">
+          <ion-button color="light" (click)="voltar()">Voltar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form>
+  </div>
+</ion-content>
+

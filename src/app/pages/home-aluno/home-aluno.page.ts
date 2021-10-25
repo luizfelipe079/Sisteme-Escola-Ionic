@@ -1,4 +1,6 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlunoDTO } from 'src/models/aluno.dto';
 import { AlunoService } from 'src/services/aluno.service';
 import { StorageService } from 'src/services/storage.service';
@@ -14,7 +16,8 @@ export class HomeAlunoPage implements OnInit {
 
   constructor(
     public alunoService: AlunoService,
-    public storage: StorageService
+    public storage: StorageService,
+    public router: Router
   ) { }
 
   ngOnInit() {
@@ -29,6 +32,11 @@ export class HomeAlunoPage implements OnInit {
         error => {});
     }
 
+  }
+
+  logout(){
+    this.storage.setLocalUser(null);
+    this.router.navigate(['home']);
   }
 
 }

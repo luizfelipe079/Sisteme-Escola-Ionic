@@ -34,6 +34,18 @@ const routes: Routes = [
   {
     path: 'home-aluno',
     loadChildren: () => import('./pages/home-aluno/home-aluno.module').then( m => m.HomeAlunoPageModule)
+  },
+  {
+    path: 'cadastro-aluno',
+    loadChildren: () => import('./pages/cadastro-aluno/cadastro-aluno.module').then( m => m.CadastroAlunoPageModule)
+  },
+  {
+    path: 'consultar-notas',
+    loadChildren: () => import('./pages/consultar-notas/consultar-notas.module').then( m => m.ConsultarNotasPageModule)
+  },
+  {
+    path: 'esqueci-senha',
+    loadChildren: () => import('./pages/esqueci-senha/esqueci-senha.module').then( m => m.EsqueciSenhaPageModule)
   }
 ];
 

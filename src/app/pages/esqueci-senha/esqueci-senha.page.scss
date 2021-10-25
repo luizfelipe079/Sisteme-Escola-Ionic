@@ -1,6 +1,6 @@
 ion-card {
-    width: 700px;
-    height: 500px;
+    width: 375px;
+    height: 600px;
 }
 
 ion-button {
@@ -9,8 +9,8 @@ ion-button {
     align-items: center;
 }
 
-ion-card-content{
-    padding-top: 120px;
+.email{
+    padding-top: 50px;
 }
 
 ion-card-title{
@@ -18,8 +18,9 @@ ion-card-title{
     justify-content: center;   
 }
 
-.logout{
+.voltar{
     display: flex;
     justify-content: right;
 
+    padding-top: 250px;
 }

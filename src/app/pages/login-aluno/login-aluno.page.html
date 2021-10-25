@@ -17,7 +17,7 @@
             <ion-input type="password" [(ngModel)]="creds.senha" formControlName="senha"></ion-input>
           </ion-item>
           <ion-label color="danger" *ngIf="form.get('senha').touched && form.get('senha').errors?.required">Senha obrigatório</ion-label>
-          <ion-button color="dark" fill="clear" size="full">Esqueci a Senha</ion-button>
+          <ion-button color="dark" fill="clear" size="full" (click)="EsqueciASenha()">Esqueci a Senha</ion-button>
           <ion-button color="light" size="full" [disabled]="!form.valid" (click)="login()">Entrar</ion-button>
         </ion-card-header>
         

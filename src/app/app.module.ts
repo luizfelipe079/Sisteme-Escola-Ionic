@@ -12,6 +12,7 @@ import { StorageService } from 'src/services/storage.service';
 import { ProfessorService } from 'src/services/professor.service';
 import { AlunoService } from 'src/services/aluno.service';
 import { AuthInterceptorProvider } from './interceptors/auth-interceptor';
+import { ErrorInterceptorProvider } from './interceptors/error-intercept';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { AuthInterceptorProvider } from './interceptors/auth-interceptor';
   providers: [{ 
     provide: RouteReuseStrategy, 
     useClass: IonicRouteStrategy }, 
+    ErrorInterceptorProvider,
     AuthInterceptorProvider,
     AuthService, 
     StorageService, 

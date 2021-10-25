@@ -26,6 +26,12 @@ export class LoginPage implements OnInit {
 
   ngOnInit() { 
     this.form = new LoginPageForm(this.formBuilder).createForm();
+
+    this.auth.refreshToken()
+      .subscribe(response => {
+        this.auth.successfulLogin(response.headers.get('Authorization'));
+        this.router.navigate(['home-professor'])
+      });
   }
 
   login(){
@@ -35,6 +41,10 @@ export class LoginPage implements OnInit {
         this.router.navigate(['home-professor']);
       },
       error => {});
+  }
+
+  EsqueciASenha(){
+    this.router.navigate(['esqueci-senha']);
   }
 
   cadastro() {

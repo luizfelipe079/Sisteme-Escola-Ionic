@@ -13,9 +13,9 @@
             <ion-label position="floating">Senha</ion-label>
             <ion-input type="password" [(ngModel)]="creds.senha" formControlName="senha"></ion-input>
           </ion-item>
-          <ion-button color="dark" fill="clear" size="full">Esqueci a Senha</ion-button>
+          <ion-button color="dark" fill="clear" size="full" (click)="EsqueciASenha()">Esqueci a Senha</ion-button>
           <ion-button color="light" size="full" [disabled]="!form.valid" (click)="login()">Entrar</ion-button>
-          <ion-button color="primary" fill="clear" size="full" (click)="cadastro()">Cadastro</ion-button>
+          <!-- <ion-button color="primary" fill="clear" size="full" (click)="cadastro()">Cadastro</ion-button> -->
         </ion-card-header>
         <ion-card-content class="voltar">
           <ion-button color="light" (click)="voltar()">Voltar</ion-button>
