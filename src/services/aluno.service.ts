@@ -17,4 +17,15 @@ export class AlunoService{
         );
     }
 
+    insert(professor: AlunoDTO){
+        return this.http.post(
+            `${API_CONFIG.baseUrl}/alunos`,
+            professor,
+            {
+                observe: 'response',
+                responseType: 'text'
+            }
+        );
+    }
+
 }

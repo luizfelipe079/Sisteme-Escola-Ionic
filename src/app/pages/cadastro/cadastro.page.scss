@@ -4,26 +4,23 @@ ion-button {
     padding: 10px;
 }
 
-img {
-    width: 200px;
-    align-self: center;
-    margin: auto;
-    display: block;
-    padding: 10px;
-}
-
 ion-title{
     --color : white;
 }
 
 ion-card{
-    height: 400px;
-    width: 500px;
+    height: 550px;
+    width: 400px;
+}
+
+.formulario{
+
+    padding-top: 50px;
 }
 
 .voltar{
     display: flex;
     justify-content: right;
 
-    padding-top: 20px;
+    padding-top: 60px;
 }

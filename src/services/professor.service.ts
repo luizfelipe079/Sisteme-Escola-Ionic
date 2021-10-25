@@ -16,4 +16,15 @@ export class ProfessorService{
             `${API_CONFIG.baseUrl}/professores/email?value=${email}`
             );
     }
+
+    insert(professor: ProfessorDTO){
+        return this.http.post(
+            `${API_CONFIG.baseUrl}/professores`,
+            professor,
+            {
+                observe: 'response',
+                responseType: 'text'
+            }
+        );
+    }
 }

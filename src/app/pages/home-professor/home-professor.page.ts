@@ -43,4 +43,11 @@ export class HomeProfessorPage implements OnInit {
     this.router.navigate(['home']);
   }
 
+  cadastroProfessor(){
+    this.router.navigate(['cadastro']);
+  }
+
+  cadastroAluno(){
+    this.router.navigate(['cadastro-aluno']);
+  }
 }
