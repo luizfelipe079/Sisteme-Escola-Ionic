@@ -50,6 +50,14 @@ const routes: Routes = [
   {
     path: 'cadastro-disciplina',
     loadChildren: () => import('./pages/cadastro-disciplina/cadastro-disciplina.module').then( m => m.CadastroDisciplinaPageModule)
+  },
+  {
+    path: 'add-aluno-disciplinas',
+    loadChildren: () => import('./pages/add-aluno-disciplinas/add-aluno-disciplinas.module').then( m => m.AddAlunoDisciplinasPageModule)
+  },
+  {
+    path: 'add-nota',
+    loadChildren: () => import('./pages/add-nota/add-nota.module').then( m => m.AddNotaPageModule)
   }
 ];
 

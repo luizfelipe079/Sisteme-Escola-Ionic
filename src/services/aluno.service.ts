@@ -17,6 +17,12 @@ export class AlunoService{
         );
     }
 
+    findAllAlunos(): Observable<AlunoDTO[]>{
+        return this.http.get<AlunoDTO[]>(
+            `${API_CONFIG.baseUrl}/alunos`
+        );
+    }
+
     insert(professor: AlunoDTO){
         return this.http.post(
             `${API_CONFIG.baseUrl}/alunos`,
@@ -26,6 +32,17 @@ export class AlunoService{
                 responseType: 'text'
             }
         );
+    }
+
+    inserirAlunoDisciplina(id_aluno: string, id_disciplina: string){
+        return this.http.post(
+           `${API_CONFIG.baseUrl}/alunos/${id_aluno}/adicionar/${id_disciplina}`,
+           ""
+        //    {
+        //        observe: 'response',
+        //        responseType: 'text'
+        //    } 
+        )
     }
 
 }

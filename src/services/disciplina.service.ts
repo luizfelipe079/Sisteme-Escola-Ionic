@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 import { API_CONFIG } from "src/config/api.config";
 import { DisciplinaDTO } from "src/models/disciplina.dto";
 import { StorageService } from "./storage.service";
@@ -18,6 +19,12 @@ export class DisciplinaService{
                 observe: 'response',
                 responseType: 'text'
             }
+        );
+    }
+
+    findAllDisciplinas(): Observable<DisciplinaDTO[]>{
+        return this.http.get<DisciplinaDTO[]>(
+            `${API_CONFIG.baseUrl}/disciplinas`
         );
     }
 
