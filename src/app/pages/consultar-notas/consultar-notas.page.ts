@@ -131,7 +131,11 @@ export class ConsultarNotasPage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'basic-alert', 
       header: `Notas:`,
-      message: `Nota 1 : ${this.nota.nota1}; Nota 2 : ${this.nota.nota2}`,
+      message: `
+        <p>Aluno ${this.nota.aluno.nome}</p>
+        <p> 1º Nota : ${this.nota.nota1}</p>
+        <p> 2º Nota : ${this.nota.nota2}</p>
+      `,
       buttons: 
         [{
           text: 'OK',

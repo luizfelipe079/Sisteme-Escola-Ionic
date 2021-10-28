@@ -7,8 +7,25 @@
         <p>{{aluno?.email}}</p>
       </ion-card-header>
 
-      <ion-card-content>
-        <ion-button color="primary" size="full">Consultar Notas</ion-button>
+      <ion-card-content scrolly="true">
+        <ion-button *ngIf="!able" color="primary" size="full" (click)="verNotas()">Consultar Notas</ion-button>
+        
+        <div scrolly="true" style="max-height:200px">
+        <ion-list>
+          <ion-item>
+            <ion-label *ngIf="able">Disciplina:</ion-label>  
+            <ion-label *ngFor="let nota of notas" >{{nota.disciplina.nome}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label *ngIf="able">Nota 1:</ion-label>  
+            <ion-label *ngFor="let nota of notas" >{{nota.nota1}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label *ngIf="able">Nota 2:</ion-label>  
+            <ion-label *ngFor="let nota of notas" >{{nota.nota2}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
       </ion-card-content>
 
       <ion-card-content class="logout">

@@ -16,6 +16,12 @@ export class NotaService {
             `${API_CONFIG.baseUrl}/notas/aluno/${id_aluno}/disciplina/${id_disciplina}`
         );
     }
+
+    findAllNotasAluno(id_aluno: string): Observable<NotaDTO[]>{
+        return this.http.get<NotaDTO[]>(
+            `${API_CONFIG.baseUrl}/notas/aluno/${id_aluno}`
+        );
+    }
     
     inserirNota(nota: NotaDTO, id_aluno: string, id_disciplina: string){
         return this.http.post(

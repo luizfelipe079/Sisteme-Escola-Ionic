@@ -58,6 +58,10 @@ const routes: Routes = [
   {
     path: 'add-nota',
     loadChildren: () => import('./pages/add-nota/add-nota.module').then( m => m.AddNotaPageModule)
+  },
+  {
+    path: 'notas-aluno',
+    loadChildren: () => import('./pages/notas-aluno/notas-aluno.module').then( m => m.NotasAlunoPageModule)
   }
 ];
 
