@@ -79,9 +79,6 @@ export class AddAlunoDisciplinasPage implements OnInit {
   }
 
   adicionarAluno(){
-    console.log(this.form.value);
-    console.log(this.id_aluno);
-    console.log(this.id_disciplina);
     this.alunoService.inserirAlunoDisciplina(this.id_aluno, this.id_disciplina)
       .subscribe(response => {
         this.cadstroAlert();

@@ -33,13 +33,16 @@ export class CadastroPage implements OnInit {
     this.cadastroForm.getForm().markAllAsTouched();
 
     if(this.cadastroForm.getForm().valid){
-      console.log(this.cadastroForm.getForm().value);
 
       this.professorService.insert(this.cadastroForm.getForm().value)
         .subscribe(response => {
           this.presentAlert();
         },
-        error => {});
+        error => {
+          if(error.status == 500){
+            this.erroCadastroAlert();
+          }
+        });
     }
   }
 
@@ -54,6 +57,20 @@ export class CadastroPage implements OnInit {
           handler: () => {
             this.router.navigate(['home-professor']);
           }
+        }]
+    });
+
+    await alert.present();
+  }
+
+  async erroCadastroAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'basic-alert',
+      header: 'Erro 500',
+      message: 'O email já foi utilizado!',
+      buttons: 
+        [{
+          text: 'OK'
         }]
     });
 

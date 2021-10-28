@@ -38,10 +38,6 @@ export class AlunoService{
         return this.http.post(
            `${API_CONFIG.baseUrl}/alunos/${id_aluno}/adicionar/${id_disciplina}`,
            ""
-        //    {
-        //        observe: 'response',
-        //        responseType: 'text'
-        //    } 
         )
     }
 

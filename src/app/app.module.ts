@@ -14,6 +14,7 @@ import { AlunoService } from 'src/services/aluno.service';
 import { AuthInterceptorProvider } from './interceptors/auth-interceptor';
 import { ErrorInterceptorProvider } from './interceptors/error-intercept';
 import { DisciplinaService } from 'src/services/disciplina.service';
+import { NotaService } from 'src/services/nota.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +29,9 @@ import { DisciplinaService } from 'src/services/disciplina.service';
     StorageService, 
     ProfessorService,
     AlunoService,
-    DisciplinaService],
+    DisciplinaService,
+    NotaService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

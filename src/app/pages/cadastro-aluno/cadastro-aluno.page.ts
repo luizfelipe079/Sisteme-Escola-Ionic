@@ -37,7 +37,6 @@ export class CadastroAlunoPage implements OnInit {
     this.cadastroForm.getForm().markAllAsTouched();
 
     if(this.cadastroForm.getForm().valid){
-      console.log(this.cadastroForm.getForm().value);
 
       this.alunoService.insert(this.cadastroForm.getForm().value)
         .subscribe(response => {

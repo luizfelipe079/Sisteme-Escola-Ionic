@@ -46,25 +46,33 @@ export class HomeProfessorPage implements OnInit {
     }
   }
 
-  logout(){
-    this.storage.setLocalUser(null);
-    this.router.navigate(['home']);
-  }
-
-  cadastroProfessor(){
-    this.router.navigate(['cadastro']);
-  }
-
-  cadastroAluno(){
-    this.router.navigate(['cadastro-aluno']);
-  }
-
-  cadastroDisciplina(){
-    this.router.navigate(['cadastro-disciplina']);
+  addNota(){
+    this.router.navigate(['add-nota']);
   }
 
   adicionarAluno(){
     this.router.navigate(['add-aluno-disciplinas'])
+  }
+  
+  cadastroProfessor(){
+    this.router.navigate(['cadastro']);
+  }
+  
+  cadastroAluno(){
+    this.router.navigate(['cadastro-aluno']);
+  }
+  
+  cadastroDisciplina(){
+    this.router.navigate(['cadastro-disciplina']);
+  }
+  
+  consultarNotas(){
+    this.router.navigate(['consultar-notas']);
+  }
+
+  logout(){
+    this.storage.setLocalUser(null);
+    this.router.navigate(['home']);
   }
 
   async presentAlert() {
